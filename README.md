@@ -34,7 +34,7 @@ App.js                 # โค้ดหลัก, สร้าง Stack (Main, 
 
 ---
 
-## 🗂 Data Model (สรุป)
+## Data Model (สรุป)
 - **Course**: `code`, `name`
 - **SemesterRegistration**: `term`, `courses: Course[]`
 - **Student**: `firstName`, `lastName`, `studentId`, `major`, `school`, `imageUrl`, `registrations: SemesterRegistration[]`
