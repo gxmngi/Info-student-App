@@ -1,66 +1,38 @@
-# Student Info App — Expo (Android)
+# Student Info App (React Native + Expo)
 
-แอปข้อมูลนักศึกษา 2 หน้า ใช้ **React Native Paper (MD3)** + **React Navigation** บน **Expo**. ทำงานครบผ่าน VS Code + Android.
+แอปข้อมูลนักศึกษา 2 หน้า (Main Page และ Registration Page) พัฒนาโดยใช้ React Native Paper (MD3) และ React Navigation ภายใต้ Expo
 
----
-
-## Quick Start
-```bash
-npm install
-npx expo start
-# กด a เพื่อรันบน Android Emulator หรือสแกน QR ด้วยแอป Expo Go
-```
-
-> ต้องมี Android Studio (สำหรับ Emulator) หรือมือถือ Android + แอป Expo Go
-
----
-
-## 🔧 Dependencies (หลัก)
-- @react-navigation/native
-- @react-navigation/native-stack
-- react-native-paper
+## เทคโนโลยีที่ใช้
+- Expo SDK: 50.x.x
+- React Native: 0.73.x
+- React Native Paper: 5.x.x
+- React Navigation: 6.x.x
 - react-native-safe-area-context
 - react-native-screens
 
-> โปรเจกต์มาจาก template **expo blank** (ไม่ต้องติดตั้ง expo-cli แบบ global ใช้ `npx` ได้เลย)
+## วิธีติดตั้งและรัน
 
----
+1. **เปิดโครงการใน VS Code**
+   โครงงานนี้สร้างจาก template `expo blank`  
+   ```bash
+   npx create-expo-app student-info-rn --template blank
 
-## โครงสร้างไฟล์ (ย่อ)
-```
-App.js                 # โค้ดหลัก, สร้าง Stack (Main, Registration)
-```
-> (ถ้ามีไฟล์เพิ่ม แนะนำจัดเป็นโฟลเดอร์ `src/screens`, `src/data` ตามต้องการ)
+2. **ติดตั้งไลบรารีที่ใช้**
+npm install @react-navigation/native @react-navigation/native-stack
+npm install react-native-paper
+npm install react-native-safe-area-context react-native-screens
 
----
+3. **รันแอป**
+npx expo start
 
-## Data Model (สรุป)
-- **Course**: `code`, `name`
-- **SemesterRegistration**: `term`, `courses: Course[]`
-- **Student**: `firstName`, `lastName`, `studentId`, `major`, `school`, `imageUrl`, `registrations: SemesterRegistration[]`
+4. **ทดสอบบน Android**
+หากใช้ Android Emulator → เปิด Android Studio, รัน Emulator จากนั้นเลือก Run on Android emulator ใน Expo
 
----
-
-## หน้าจอ
-- **Main Page**: รายละเอียดนักศึกษา + รูปจาก URL (Avatar.Image) + ปุ่มไปหน้า Registration
-- **Registration Page**: รายวิชาแยกตามเทอม (List.Accordion) แสดงแบบ `รหัส – ชื่อวิชา`
-
----
-
-## Screenshots (ใส่เองภายหลัง)
-```
-./assets/screenshot-main.png
-./assets/screenshot-registration.png
-```
-เพิ่มใน README ได้ด้วย:
-```md
-![Main](./assets/screenshot-main.png)
-![Registration](./assets/screenshot-registration.png)
-```
-
----
-
-## ℹNotes
-- ต้องต่ออินเทอร์เน็ตเพื่อโหลดรูปนักศึกษาจาก URL
-- ถ้า Emulator ไม่ขึ้น ให้เปิด Android Studio > Virtual Device Manager > Start ก่อน
-
+**หน้าจอในแอป**
+1. Man Page
+- แสดงข้อมูลนักศึกษา: ชื่อ, นามสกุล, รหัสนักศึกษา, สาขา, สำนักวิชา
+- แสดงรูปจาก URL ด้วย Avatar.Image
+- ปุ่มนำทางไปหน้า Registration Page
+2. Registration Page
+- แสดงรายวิชาแยกตามเทอมด้วย List.Accordion
+- แสดงรายวิชาในรูปแบบ รหัส – ชื่อวิชา
